@@ -1,0 +1,29 @@
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 100vh;
+}
+
+.container{
+  width: 100%;
+  max-width: 849px;
+  height: 660px;
+  background: #1D1D1D;
+  margin: auto;
+  box-sizing: border-box;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  &__top{
+    display: flex;
+    align-items: stretch;
+    gap: 24px;
+  }
+
+  &__bottom{
+    width: 100%;
+  }
+}

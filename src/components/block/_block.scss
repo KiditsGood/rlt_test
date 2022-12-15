@@ -1,0 +1,41 @@
+.block{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 17px 67px 17px 17px;
+  background: $dark;
+  border-radius: 12px;
+  border: 1px solid $border;
+  position: relative;
+
+  &__inner{
+    background: $skeleton;
+    border-radius: 12px;
+    width: 100%;
+    height: 36px;
+  }
+
+  &__close{
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & span{
+      background: white;
+      width: 17px;
+      height: 1px;
+      position: absolute;
+      transition: 0.2s;
+
+      &:first-child{
+        transform: rotate(45deg);
+      }
+
+      &:last-child{
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}
