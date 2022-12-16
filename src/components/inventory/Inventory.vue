@@ -12,20 +12,25 @@
                      v-for="item in items.filter(item => item.hole === hole.id)"
                      draggable="true"
                      :key="item.id"
-                     @dragstart='startDrag($event, item)'
+                     @dragstart="startDrag($event, item)"
+                     @click="modalOpen = !modalOpen; currentColor = item.color;"
+                     v-show="item.count > 0"
                 >
                     {{item.title}}
+                    <p class="item__count">{{ item.count }}</p>
                 </div>
             </div>
             <div v-else>{{hole.title}}</div>
         </div>
+        <Modal :modal-handler="modalOpen" :selected-item="currentColor"/>
     </div>
 </template>
 
 <script>
+    import Modal from "@/components/modal/Modal";
     export default {
         name: "Inventory",
-
+        components: {Modal},
         data() {
             return {
                 holes: [
@@ -164,20 +169,25 @@
                         id: 0,
                         title: '',
                         hole: 1,
-                        color: 'green'
+                        color: 'green',
+                        count: 4
                     },
                     {
                         id: 1,
                         title: '',
                         hole: 2,
-                        color: 'yellow'
+                        color: 'yellow',
+                        count: 2
                     },
                     {
                         id: 2,
                         title: '',
                         hole: 3,
-                        color: 'purple'
-                    }]
+                        color: 'purple',
+                        count: 5
+                    }],
+                modalOpen: false,
+                currentColor: ''
             };
         },
         methods: {

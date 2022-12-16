@@ -9,9 +9,18 @@
 }
 
 a, button{
-  transition: 0.2s;
+  transition: 0.3s;
   
   &:hover{
     cursor: pointer;
   }
+}
+
+input[type='number']{
+  -moz-appearance: textfield;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
